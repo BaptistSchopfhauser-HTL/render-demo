@@ -10,15 +10,15 @@ const myApp = {
   },
   methods: {
     async getData() {
-      const { data } = await axios.get('http://localhost:3000/immos');
+      const { data } = await axios.get('/immos');
       this.immos = data;
     },
     async delData(id) {
-      await axios.delete(`http://localhost:3000/immos/${id}`);
+      await axios.delete(`/immos/${id}`);
       this.getData();
     },
     async changeData() {
-      await axios.patch(`http://localhost:3000/immos/${this.id}`, { price: Number(this.price) });
+      await axios.patch(`/immos/${this.id}`, { price: Number(this.price) });
       this.getData();
     },
     loadPrice(id, price) {
